@@ -1,0 +1,9 @@
+.idea
+
+GoTH/templ
+GoTH/src/employees_templ.go
+GoTH/src/go.sum
+
+STyX/target
+
+*.iml

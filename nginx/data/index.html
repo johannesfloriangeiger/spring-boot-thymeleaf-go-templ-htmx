@@ -1,0 +1,24 @@
+<!doctype html>
+<html class="no-js" lang="" xmlns="">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>Employees</title>
+
+    <script src="https://unpkg.com/htmx.org@1.9.10"
+            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+            crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+    <span class="mdc-text-field__ripple"></span>
+    <input class="mdc-text-field__input" type="text" id="search" name="search" placeholder="Name" aria-label="Label">
+    <span class="mdc-line-ripple"></span>
+</label>
+<button hx-get="/api/employees" hx-target="#employees" hx-include="[name='search']" class="mdc-button">Filter</button>
+<div id="employees" hx-get="/api/employees" hx-trigger="load">
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+package main
+
+import (
+    "strconv"
+    "strings"
+)
+
+templ employees(persons []Person, search string) {
+    <table class="mdc-data-table__table">
+        <tr class="mdc-data-table__header-row">
+            <th class="mdc-data-table__header-cell" >ID</th>
+            <th class="mdc-data-table__header-cell" >Name</th>
+        </tr>
+        for _, person := range persons {
+            if search == "" || strings.HasPrefix(person.name, search) {
+        <tr class="mdc-data-table__row">
+            <td class="mdc-data-table__cell">{ strconv.Itoa(person.id) }</td>
+            <td class="mdc-data-table__cell">{ person.name }</td>
+        </tr>
+            }
+        }
+    </table>
+}

@@ -1,0 +1,10 @@
+<table class="mdc-data-table__table">
+    <tr class="mdc-data-table__header-row">
+        <th class="mdc-data-table__header-cell">ID</th>
+        <th class="mdc-data-table__header-cell">Name</th>
+    </tr>
+    <tr th:each="employee : ${employeesModel.employees}" class="mdc-data-table__row">
+        <td th:text="${employee.id}" class="mdc-data-table__cell">ID</td>
+        <td th:text="${employee.name}" class="mdc-data-table__cell">Name</td>
+    </tr>
+</table>

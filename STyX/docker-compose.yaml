@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+  nginx:
+    build: ./../nginx
+    volumes:
+      - ./../nginx/data:/etc/nginx/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
